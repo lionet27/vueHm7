@@ -1,0 +1,28 @@
+@font-face {
+  font-family: DM Serif Display;
+  src: url("../../fonts/DMSerifDisplay-Regular.ttf");
+}
+@font-face {
+  font-family: Jost;
+  src: url("../../fonts/Jost-VariableFont_wght.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1140px;
+}
+
+.center {
+  padding-left: calc(50% - 570px);
+  padding-right: calc(50% - 570px);
+}/*# sourceMappingURL=style.css.map */

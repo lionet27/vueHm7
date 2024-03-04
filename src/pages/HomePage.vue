@@ -59,7 +59,7 @@
 </script>
 
 <style lang="scss" scoped>
-    $colorCount:#CDA274;
+    // $colorCount:#CDA274;
     .banner{
         margin-top:57px;
         margin-bottom: 96px;
