@@ -1,6 +1,9 @@
 <template>
     <HeaderComponent/>
-    <img class="bannerBlog" src="../assets/img/BannerBlog.svg" alt="">
+    <div  class="bannerBlog">
+        
+    <img src="../assets/img/BannerBlog.svg" alt="">
+    </div>
     <ArticleComponent/>
     <!-- <div ></div> -->
     <FooterComponent/>
@@ -23,5 +26,6 @@
     .bannerBlog{
         margin-top: 45px;
         margin-bottom: 200px;
+        text-align: center;
     }
 </style>
