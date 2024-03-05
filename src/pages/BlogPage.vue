@@ -47,12 +47,12 @@
 </script>
 
 <style lang="scss" scoped>
-    // @mixin flexSBcenter($gap) {
-    //     display: flex;
-    //     justify-content: space-between;
-    //     gap: $gap;
-    //     align-items: center;
-    // }
+    @mixin flexSBcenter($gap) {
+        display: flex;
+        justify-content: space-between;
+        gap: $gap;
+        align-items: center;
+    }
    .banner{
         margin-top: 45px;
         margin-bottom: 200px;

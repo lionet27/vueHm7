@@ -63,12 +63,12 @@
 </script>
 
 <style lang="scss" scoped>
-// @mixin flexSBcenter($gap) {
-//     display: flex;
-//     justify-content: space-between;
-//     gap: $gap;
-//     align-items: center;
-// }
+@mixin flexSBcenter($gap) {
+    display: flex;
+    justify-content: space-between;
+    gap: $gap;
+    align-items: center;
+}
     .articles{
     margin-bottom: 96px;
     &__header{
