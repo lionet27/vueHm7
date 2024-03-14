@@ -44,7 +44,7 @@
                     imgType:"Living Design" ,
                     artcileContent:"Low Cost Latest Invented Interior Designing \n Ideas.",
                     artcileDate:"22 December,2022",
-                    vector:"img/vectorWhite.svg",
+                    vector:"../assets/img/vectorWhite.svg",
                  },
                  {
                     id:3,
@@ -52,7 +52,7 @@
                     imgType:"Interior Design" ,
                     artcileContent:"Best For Any Office & Business Interior \n Solution",
                     artcileDate:"25 December,2022",
-                    vector:"img/vectorGrey.svg",
+                    vector:"../assets/img/vectorGrey.svg",
                  },
             ],
           

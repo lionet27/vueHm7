@@ -5,7 +5,7 @@
     <img src="../assets/img/BannerBlog.svg" alt="">
     </div>
     <ArticleComponent/>
-    <!-- <div ></div> -->
+    
     <FooterComponent/>
 </template>
 
