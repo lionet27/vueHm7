@@ -7,189 +7,215 @@
             </div>
         </div>
         <div class="projectExamples">
-            <ProjectExamplesDisplayComponent v-for="(project, index) in  selectProjects" :key="index" :project="project"/>
+          
+            <div class="project__item" v-on:dblclick="changeFavoriteStatus(project)" v-for="(project, index) in  selectProjects" :key="index">
+                    <img class="project__item__img" :src="project.img" alt="">
+                    
+                    <div class="project__item__content">
+                        <div class="project__item__text">
+                                <p class="project__item__title">{{project.title}}</p>
+                                <p class="project__item__subtitle">Decor / Artchitecture</p>
+                        </div>
+                        <div class="project__item__vector">
+                            <img  src="../assets/img/VectorInEllpse.svg" alt="">
+                        </div>
+                    </div>
+                    <img class="project__item__star" v-if="project.favorites" src="../assets/img/star.svg" alt="">
+                
+                </div>
                       
         </div>
    
     </div>
 </template>
 
-<script>
-    import  ProjectExamplesDisplayComponent  from './ProjectExamplesDisplayComponent.vue';
+<script>   
+    import { mapState, mapGetters, mapMutations, mapActions,mapModules} from "vuex";
     export default {
-        components: {
-            ProjectExamplesDisplayComponent,
-        },
+        
         data() {
             return {
-                tags:['Bathroom','Bed room','Kitchen','Living Area'],
-                projects:[
-                    {
-                        img:require("@/assets/img/BedroomProject1.svg"),
-                        title:'Minimal Bedroom',
-                        tag:'Bed room',
-                        favorites:false,
-                    },
-                    {
-                        img:require("@/assets/img/BedroomProject2.svg"),
-                        title:'Classic Minimal Bedroom',
-                        tag:'Bed room',
-                        favorites:false,
-                    },
-                    {
-                        img:require("@/assets/img/BedroomProject3.svg"),
-                        title:'Minimal Bedroom table',
-                        tag:'Bed room',
-                        favorites:false,
-                    },
-                    {
-                        img:require("@/assets/img/BedroomProject4.svg"),
-                        title:'Modern Bedroom',
-                        tag:'Bed room',
-                        favorites:false,
-                    },
-                    {
-                        img:require("@/assets/img/BedroomProject5.svg"),
-                        title:'Minimal Bedroom',
-                        tag:'Bed room',
-                        favorites:false,
-                    },
-                    {
-                        img:require("@/assets/img/BedroomProject6.svg"),
-                        title:'Modern Bedroom',
-                        tag:'Bed room',
-                        favorites:false,
-                    },
-                    {
-                        img:require("@/assets/img/BedroomProject7.svg"),
-                        title:'System Table',
-                        tag:'Bed room',
-                        favorites:false,
-                    },
-                    {
-                        img:require("@/assets/img/BedroomProject8.svg"),
-                        title:'Modern Bedroom',
-                        tag:'Bed room',
-                        favorites:false,
-                    },
-                    {
-                        img:require("@/assets/img/bathroomProject1.jpg"),
-                        title:'Modern Bathroom',
-                        tag:'Bathroom',
-                        favorites:false,
-                    },
-                    {
-                        img:require("@/assets/img/bathroomProject2.jpg"),
-                        title:'Classic Bathroom',
-                        tag:'Bathroom',
-                        favorites:false,
-                    },
-                    {
-                        img:require("@/assets/img/bathroomProject3.jpg"),
-                        title:'Modern Bathroom',
-                        tag:'Bathroom',
-                        favorites:false,
-                    },
-                    {
-                        img:require("@/assets/img/bathroomProject4.jpg"),
-                        title:'Classic Bathroom',
-                        tag:'Bathroom',
-                        favorites:false,
-                    },
-                    {
-                        img:require("@/assets/img/kitchenProject1.jpg"),
-                        title:'Modern kitchen',
-                        tag:'Kitchen',
-                        favorites:false,
-                    },
-                    {
-                        img:require("@/assets/img/kitchenProject2.jpg"),
-                        title:'Classic kitchen',
-                        tag:'Kitchen',
-                        favorites:false,
-                    },
-                    {
-                        img:require("@/assets/img/kitchenProject3.jpg"),
-                        title:'Classic kitchen',
-                        tag:'Kitchen',
-                        favorites:false,
-                    },
-                    {
-                        img:require("@/assets/img/kitchenProject4.jpg"),
-                        title:'Modern kitchen',
-                        tag:'Kitchen',
-                        favorites:false,
-                    },
-                    {
-                        img:require("@/assets/img/kitchenProject5.jpg"),
-                        title:'Classic kitchen',
-                        tag:'Kitchen',
-                        favorites:false,
-                    },
-                    {
-                        img:require("@/assets/img/kitchenProject6.jpg"),
-                        title:'Classic kitchen',
-                        tag:'Kitchen',
-                        favorites:false,
-                    },
-                    {
-                        img:require("@/assets/img/livingProject1.jpg"),
-                        title:'Modern Living Area',
-                        tag:'Living Area',
-                        favorites:false,
-                    },
-                    {
-                        img:require("@/assets/img/livingProject2.jpg"),
-                        title:'Classic Living Area',
-                        tag:'Living Area',
-                        favorites:false,
-                    },
-                    {
-                        img:require("@/assets/img/livingProject3.jpg"),
-                        title:'Modern Living Area',
-                        tag:'Living Area',
-                        favorites:false,
-                    },
-                    {
-                        img:require("@/assets/img/livingProject4.jpg"),
-                        title:'Classic Living Area',
-                        tag:'Living Area',
-                        favorites:false,
-                    },
-                    {
-                        img:require("@/assets/img/livingProject5.jpg"),
-                        title:'Modern Living Area',
-                        tag:'Living Area',
-                        favorites:false,
-                    },
-                    {
-                        img:require("@/assets/img/livingProject6.jpg"),
-                        title:'Classic Living Area',
-                        tag:'Living Area',
-                        favorites:false,
-                    },
+                // tags:['Bathroom','Bed room','Kitchen','Living Area'],
+                // projects:[
+                //     {
+                //         img:require("@/assets/img/BedroomProject1.svg"),
+                //         title:'Minimal Bedroom',
+                //         tag:'Bed room',
+                //         favorites:false,
+                //     },
+                //     {
+                //         img:require("@/assets/img/BedroomProject2.svg"),
+                //         title:'Classic Minimal Bedroom',
+                //         tag:'Bed room',
+                //         favorites:false,
+                //     },
+                //     {
+                //         img:require("@/assets/img/BedroomProject3.svg"),
+                //         title:'Minimal Bedroom table',
+                //         tag:'Bed room',
+                //         favorites:false,
+                //     },
+                //     {
+                //         img:require("@/assets/img/BedroomProject4.svg"),
+                //         title:'Modern Bedroom',
+                //         tag:'Bed room',
+                //         favorites:false,
+                //     },
+                //     {
+                //         img:require("@/assets/img/BedroomProject5.svg"),
+                //         title:'Minimal Bedroom',
+                //         tag:'Bed room',
+                //         favorites:false,
+                //     },
+                //     {
+                //         img:require("@/assets/img/BedroomProject6.svg"),
+                //         title:'Modern Bedroom',
+                //         tag:'Bed room',
+                //         favorites:false,
+                //     },
+                //     {
+                //         img:require("@/assets/img/BedroomProject7.svg"),
+                //         title:'System Table',
+                //         tag:'Bed room',
+                //         favorites:false,
+                //     },
+                //     {
+                //         img:require("@/assets/img/BedroomProject8.svg"),
+                //         title:'Modern Bedroom',
+                //         tag:'Bed room',
+                //         favorites:false,
+                //     },
+                //     {
+                //         img:require("@/assets/img/bathroomProject1.jpg"),
+                //         title:'Modern Bathroom',
+                //         tag:'Bathroom',
+                //         favorites:false,
+                //     },
+                //     {
+                //         img:require("@/assets/img/bathroomProject2.jpg"),
+                //         title:'Classic Bathroom',
+                //         tag:'Bathroom',
+                //         favorites:false,
+                //     },
+                //     {
+                //         img:require("@/assets/img/bathroomProject3.jpg"),
+                //         title:'Modern Bathroom',
+                //         tag:'Bathroom',
+                //         favorites:false,
+                //     },
+                //     {
+                //         img:require("@/assets/img/bathroomProject4.jpg"),
+                //         title:'Classic Bathroom',
+                //         tag:'Bathroom',
+                //         favorites:false,
+                //     },
+                //     {
+                //         img:require("@/assets/img/kitchenProject1.jpg"),
+                //         title:'Modern kitchen',
+                //         tag:'Kitchen',
+                //         favorites:false,
+                //     },
+                //     {
+                //         img:require("@/assets/img/kitchenProject2.jpg"),
+                //         title:'Classic kitchen',
+                //         tag:'Kitchen',
+                //         favorites:false,
+                //     },
+                //     {
+                //         img:require("@/assets/img/kitchenProject3.jpg"),
+                //         title:'Classic kitchen',
+                //         tag:'Kitchen',
+                //         favorites:false,
+                //     },
+                //     {
+                //         img:require("@/assets/img/kitchenProject4.jpg"),
+                //         title:'Modern kitchen',
+                //         tag:'Kitchen',
+                //         favorites:false,
+                //     },
+                //     {
+                //         img:require("@/assets/img/kitchenProject5.jpg"),
+                //         title:'Classic kitchen',
+                //         tag:'Kitchen',
+                //         favorites:false,
+                //     },
+                //     {
+                //         img:require("@/assets/img/kitchenProject6.jpg"),
+                //         title:'Classic kitchen',
+                //         tag:'Kitchen',
+                //         favorites:false,
+                //     },
+                //     {
+                //         img:require("@/assets/img/livingProject1.jpg"),
+                //         title:'Modern Living Area',
+                //         tag:'Living Area',
+                //         favorites:false,
+                //     },
+                //     {
+                //         img:require("@/assets/img/livingProject2.jpg"),
+                //         title:'Classic Living Area',
+                //         tag:'Living Area',
+                //         favorites:false,
+                //     },
+                //     {
+                //         img:require("@/assets/img/livingProject3.jpg"),
+                //         title:'Modern Living Area',
+                //         tag:'Living Area',
+                //         favorites:false,
+                //     },
+                //     {
+                //         img:require("@/assets/img/livingProject4.jpg"),
+                //         title:'Classic Living Area',
+                //         tag:'Living Area',
+                //         favorites:false,
+                //     },
+                //     {
+                //         img:require("@/assets/img/livingProject5.jpg"),
+                //         title:'Modern Living Area',
+                //         tag:'Living Area',
+                //         favorites:false,
+                //     },
+                //     {
+                //         img:require("@/assets/img/livingProject6.jpg"),
+                //         title:'Classic Living Area',
+                //         tag:'Living Area',
+                //         favorites:false,
+                //     },
                    
-                ],
+                // ],
                
-                tag:'Kitchen',
-                selectedTag: null
+                // tag:'Kitchen',
+                // selectedTag: null
              }           
         },
         computed:{
-            selectProjects(){
-                return this.projects.filter(project =>project.tag==this.tag)
-            },  
+           
+            ...mapState({
+                tags:(state)=>state.ProjectExamples.tags,
+                projects:(state)=>state.ProjectExamples.projects,
+                tag:(state)=>state.ProjectExamples.tag,
+                selectedTag:(state)=>state.ProjectExamples.selectedTag,
+            }),
+             ...mapGetters(['selectProjects'])
+           
         },
         methods: {
-            
-            changeTag(selectTag) {
-                if (this.selectedTag) {
-                    this.selectedTag.classList.remove('active');
-                }
-                this.tag = selectTag;
-                this.selectedTag = event.target;
-                this.selectedTag.classList.add('active');
-            },
+            // ...mapMutations({
+            //     changeTag:( mutations)=> mutations.ProjectExamples.changeTag,
+            //     changeFavoriteStatus:(state)=>state.ProjectExamples.changeFavoriteStatus,
+            ...mapMutations(['changeTag','changeFavoriteStatus'])
+            // ...mapMutations(["changeTag", "changeFavoriteStatus"])
+            // changeTag(selectTag) {
+            //     if (this.selectedTag) {
+            //         this.selectedTag.classList.remove('active');
+            //     }
+            //     this.tag = selectTag;
+            //     this.selectedTag = event.target;
+            //     this.selectedTag.classList.add('active');
+            // },
+            // changeFavoriteStatus(project){
+            //     project.favorites=!project.favorites;
+            // }
            
         },
     }
@@ -237,6 +263,55 @@
         column-count: 2;
         column-gap: 30px;
     }
+    .project{
+        margin-bottom: 96px;
+       
+        &__item{
+           
+            margin-bottom: 36px;
+            display: inline-block;
+            position: relative;
+
+             &__img{
+                max-width: 100%;
+                margin-bottom: 24px;
+            }
+
+            &__content{
+                display: flex;
+                justify-content: space-between;
+                
+                
+            }
+           
+            &__title{
+                color: rgb(41, 47, 54);
+                font-family: DM Serif Display;
+                font-size: 25px;
+                font-weight: 400;
+                line-height: 125%;
+                letter-spacing: 2%;
+                text-align: left;
+            }
+            &__subtitle{
+                color: rgb(77, 80, 83);
+                font-family: Jost;
+                font-size: 22px;
+                font-weight: 400;
+                line-height: 150%;
+                letter-spacing: 1%;
+                text-align: left;
+            }
+            &__star{
+                position: absolute;
+                top:0px;
+                right: 0px;
+            }
+            
+
+        }
+}
 
 
 </style>
+

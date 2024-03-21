@@ -36,7 +36,7 @@
                    imgType:"Kitchan Design" ,
                    artcileContent:"Let’s Get Solution For Building Construction \n Work",
                    artcileDate:"26 December,2022",
-                   vector:"/img/vectorGrey.svg",
+                   vector:require("@/assets/img/vectorGrey.svg"),
                 },
                 {
                     id:2,
@@ -44,7 +44,7 @@
                     imgType:"Living Design" ,
                     artcileContent:"Low Cost Latest Invented Interior Designing \n Ideas.",
                     artcileDate:"22 December,2022",
-                    vector:"/img/vectorWhite.svg",
+                    vector:require("@/assets/img/vectorWhite.svg"),
                  },
                  {
                     id:3,
@@ -52,7 +52,7 @@
                     imgType:"Interior Design" ,
                     artcileContent:"Best For Any Office & Business Interior \n Solution",
                     artcileDate:"25 December,2022",
-                    vector:"img/vectorGrey.svg",
+                    vector:require("@/assets/img/vectorGrey.svg"),
                  },
                  {
                     id:4,
@@ -60,7 +60,7 @@
                    imgType:"Kitchan Design" ,
                    artcileContent:"Let’s Get Solution For Building Construction \n Work",
                    artcileDate:"26 December,2022",
-                   vector:"/img/vectorGrey.svg",
+                   vector:require("@/assets/img/vectorGrey.svg"),
                 },
                 {
                     id:5,
@@ -68,7 +68,7 @@
                     imgType:"Living Design" ,
                     artcileContent:"Low Cost Latest Invented Interior Designing \n Ideas.",
                     artcileDate:"22 December,2022",
-                    vector:"/img/vectorGrey.svg",
+                    vector:require("@/assets/img/vectorGrey.svg"),
                  },
                  {
                     id:6,
@@ -76,7 +76,7 @@
                     imgType:"Interior Design" ,
                     artcileContent:"Best For Any Office & Business Interior \n Solution",
                     artcileDate:"25 December,2022",
-                    vector:"/img/vectorGrey.svg",
+                    vector:require("@/assets/img/vectorGrey.svg"),
                  },
             ],
           

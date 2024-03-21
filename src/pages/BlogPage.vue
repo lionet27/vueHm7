@@ -58,9 +58,7 @@
         margin-bottom: 200px;
         text-align: center;
     
-        &__img{
         
-        }
     }
     .post{
         margin-bottom: 150px;
@@ -84,9 +82,7 @@
             border-radius: 62px;
 
             box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
-            &__img{
-
-            }
+           
             &__subcontent{
                 text-align: left;
             }

@@ -12,7 +12,7 @@
                             <p class="project__item__subtitle">Decor / Artchitecture</p>
                     </div>
                     <div class="project__item__vector">
-                        <img  src="img/VectorInEllpse.svg" alt="">
+                        <img  src="../assets/img/VectorInEllpse.svg" alt="">
                     </div>
                 </div>
             </div>
@@ -26,7 +26,7 @@
                             <p class="project__item__subtitle">Decor / Artchitecture</p>
                     </div>
                     <div class="project__item__vector">
-                        <img src="img/VectorInEllpse.svg" alt="">
+                        <img src="../assets/img/VectorInEllpse.svg" alt="">
                     </div>
                 </div>
             </div>
@@ -106,9 +106,7 @@
                 
                 
             }
-            &__text{
-
-            }
+            
             &__title{
                 color:#292F36;
                 font-family: DM Serif Display;
@@ -125,9 +123,7 @@
                 line-height: 150%;
                 letter-spacing: 1%;
             }
-            &__vector{
-                
-            }
+           
 
         }
     }
