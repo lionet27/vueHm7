@@ -15,7 +15,7 @@
                 <h1 class="articles__content">{{design.artcileContent}}</h1>
                 <div class="articles__dateBox">
                     <p class="articles__date">{{design.artcileDate}}</p>
-                    <img :src="design.vector" alt="">
+                    <router-link to="/BlogDetail"><img :src="design.vector" alt=""></router-link>
                 </div>
                 
             </div>

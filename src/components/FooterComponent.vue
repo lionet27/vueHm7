@@ -11,15 +11,18 @@
             </div>
 
         </div>
-        <div class="footer__pages">
+        <nav class="footer__pages">
             <h4 class="footer__pages__title">Pages</h4>
             <div class="footer__pages__links">
-                <a href="">Home</a>
-                <a href="">Project</a>
-                <a href="/blog/blogIndex.html">Blog</a>
+               
+                <router-link v-for="link in links" :key="link.id" :to="link.url ">
+                    {{link.title }}
+                 </router-link>
+            
+
             </div>
             
-        </div>
+        </nav>
         <div class="footer__contact">
             <h4 class="footer__contact__title">Contact</h4>
             <p class="footer__contact__adress">55 East Birchwood Ave. Brooklyn, New York 11201 <br><br> contact@interno.com <br><br>
@@ -31,7 +34,28 @@
 
 <script>
     export default {
-        
+        data() {
+            return {
+                links:[
+                    {
+                        id:1,
+                        title:"Home",
+                        url:"/"
+                    },
+                    {
+                        id:2,
+                        title:"Project",
+                        url:"/Project"
+                    },
+                    {
+                        id:3,
+                        title:"Blog",
+                        url:"/Blog"
+                    },
+                
+                ]
+            }
+        },
     }
 </script>
 

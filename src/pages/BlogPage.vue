@@ -14,7 +14,7 @@
                     <p class="post__content__text">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief. <br><br>Lorem Ipsum is not simply random text. It has roots in a piece of classica.</p>
                     <div class="post__content__dataVector">
                         <p class="post__content__data">26 December,2022 </p>
-                        <img src="../assets/img/vectorGrey.svg" alt="">
+                        <router-link to="/BlogDetail"><img src="../assets/img/vectorGrey.svg" alt=""></router-link>
                     </div>
                     
                 

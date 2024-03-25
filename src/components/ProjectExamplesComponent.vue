@@ -17,7 +17,7 @@
                                 <p class="project__item__subtitle">Decor / Artchitecture</p>
                         </div>
                         <div class="project__item__vector">
-                            <img  src="../assets/img/VectorInEllpse.svg" alt="">
+                            <router-link to="/ProjectDetails"><img  src="../assets/img/VectorInEllpse.svg" alt=""></router-link>
                         </div>
                     </div>
                     <img class="project__item__star" v-if="project.favorites" src="../assets/img/star.svg" alt="">
